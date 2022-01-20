@@ -51,7 +51,6 @@ void WritePersonData(unsigned short age, string name, const string& height = "",
 int main() {
     string name;
     unsigned short age, height, weight;
-    unsigned short age;
     ReadPersonData(name, age, salary);
     WritePersonData(age, name, "", "", salary);
     ReadPersonData(name, age, height, weight);
