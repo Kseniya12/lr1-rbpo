@@ -33,19 +33,15 @@ void ReadPersonSalary(double* salary) {
 void ReadPersonData(string& name, unsigned short& age, string& salary) {
     name = ReadPersonName();
     age = ReadPersonAge();
-    double doubleSalary;
-    ReadPersonSalary(&doubleSalary);
-    salary = to_string(doubleSalary);
+    ReadPersonSalary(&salary);
 }
 
 void ReadPersonData(string& name, unsigned short& age, string& height, string& weight) {
     name = ReadPersonName();
     age = ReadPersonAge();
     ReadPersonHeight();
-    height = to_string(personHeight);
-    unsigned short personWeight;
-    ReadPersonWeight(personWeight);
-    weight = to_string(personWeight);
+    height = personHeight;
+    ReadPersonWeight(weight);
 }
 
 void WritePersonData(unsigned short age, string name, const string& height = "", const string& weight = "", const string& salary = "") {
@@ -53,7 +49,8 @@ void WritePersonData(unsigned short age, string name, const string& height = "",
 }
 
 int main() {
-    string name, height, weight, salary;
+    string name;
+    unsigned short age, height, weight;
     unsigned short age;
     ReadPersonData(name, age, salary);
     WritePersonData(age, name, "", "", salary);
